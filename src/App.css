@@ -1,0 +1,27 @@
+.active a {
+   background: #3d5ee1;
+   color: #fff;
+}
+.active {
+   border-left: 5px solid #3d5ee1;
+}
+.dash-tb th {
+   padding: 10px;
+   background: #3d5ee1;
+   border-radius: 5px;
+   color: #fff;
+}
+.dash-tb td {
+   padding: 10px;
+}
+.dash-tb tr:nth-child(even) {
+   background: #f7f7fa;
+   padding: 10px;
+}
+
+/* Hero */
+.hero {
+   background: url('../public/child.jpg') no-repeat;
+   background-size: cover;
+   
+}
