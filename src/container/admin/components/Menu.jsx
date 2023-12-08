@@ -11,7 +11,7 @@ export default function Menu({ children }) {
    const menuArr = [
       menuFunc(<FaHome />, "Dashboard", "/admin/dashboard"),
       menuFunc(<FaHome />, "Student", "/admin/student"),
-      menuFunc(<FaHome />, "Create Student", "/admin/create/student"),
+      menuFunc(<FaHome />, "Teacher", "/admin/teacher"),
       menuFunc(<FaHome />, "Classes", "/admin/classes"),
       menuFunc(<FaHome />, "Create Classes", "/admin/classes/create"),
       menuFunc(<FaHome />, "Announcement", "/admin/announcement"),

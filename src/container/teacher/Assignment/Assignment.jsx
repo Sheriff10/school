@@ -93,7 +93,7 @@ export default function Assignments() {
                               required
                            >
                               <option value="">select grade</option>
-                              <option value="10a">10 A</option>
+                              <option value="11">10 A</option>
                               <option value="10b">10 B</option>
                               <option value="10c">10 C</option>
                            </select>

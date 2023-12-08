@@ -34,6 +34,9 @@ import TeacherViewStudent from "./container/teacher/Students/ViewStudent";
 import StudentViewAnnouncement from "./container/student/Dashboard/View";
 import TeacherViewClasses from "./container/teacher/StudentClass/ViewClasses/ViewClasses";
 import LoaderContextWrap from "./context/LoaderContext";
+import CreateTeacher from "./container/admin/Teachers/CreateTeacher";
+import ViewTeacher from "./container/admin/Teachers/ViewTeacher";
+import Teacher from "./container/admin/Teachers/Teacher";
 
 function App() {
    window.api = "http://localhost:5000";
@@ -48,8 +51,20 @@ function App() {
                <Route path="/admin/student" element={<Student />} />
                <Route path="/admin/student/view" element={<ViewStudent />} />
                <Route
-                  path="/admin/create/student"
+                  path="/admin/student/create"
                   element={<CreateStudent />}
+               />
+               <Route
+                  path="/admin/teacher/create"
+                  element={<CreateTeacher />}
+               />
+               <Route
+                  path="/admin/teacher/view"
+                  element={<ViewTeacher />}
+               />
+               <Route
+                  path="/admin/teacher"
+                  element={<Teacher />}
                />
                <Route path="/admin/classes" element={<StudentClass />} />
                <Route

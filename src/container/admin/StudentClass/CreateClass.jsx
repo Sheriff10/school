@@ -74,7 +74,7 @@ export default function CreateClass() {
                            <option value="" selected>
                               Select Teacher
                            </option>
-                           <option value="65557a128122b7e177d3263d">Akinwumi Grace</option>
+                           <option value="656de976137b2ae1ed048679	">Akinwumi Grace</option>
                            <option value="sheezey">Mary Global </option>
                         </select>
                      </div>
