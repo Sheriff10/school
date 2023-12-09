@@ -61,7 +61,7 @@ export default function Student() {
                         <span className="font-bold text-xl">Students List</span>
                      </div>
                      <div className="btn-wrap">
-                        <span className="flex bg-pri text-white p-2 rounded-md">
+                        <span className="flex bg-pri text-white p-2 rounded-md cursor-pointer" onClick={() => navi("/admin/student/create")}>
                            <FaPlus />
                         </span>
                      </div>

@@ -61,7 +61,7 @@ export default function Teacher() {
                         <span className="font-bold text-xl">Teacher List</span>
                      </div>
                      <div className="btn-wrap">
-                        <span className="flex bg-pri text-white p-2 rounded-md">
+                        <span className="flex bg-pri text-white p-2 rounded-md cursor-pointer" onClick={() => navi("/admin/teacher/create")}>
                            <FaPlus />
                         </span>
                      </div>

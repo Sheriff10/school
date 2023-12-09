@@ -1,11 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { LoaderContext } from "../../../context/LoaderContext";
+import adminGetHandler from "../../../utils/adminGetHandler";
 import adminPostHandler from "../../../utils/adminPostHandler";
 import Breadcrumb from "../../components/Breadcrumb";
 import Menu from "../components/Menu";
 
 export default function CreateClass() {
-   const loaderState  = useContext(LoaderContext);
+   const loaderState = useContext(LoaderContext);
 
    const [class_name, setClass_name] = useState("");
    const [teacher_id, setTeacher] = useState("");
@@ -15,6 +16,23 @@ export default function CreateClass() {
    const [startTime, setStartTime] = useState("");
    const [endTime, setEndTime] = useState("");
 
+   const [students, setStudents] = useState([]);
+
+   useEffect(() => {
+      getTeachers();
+   }, []);
+   const getTeachers = async () => {
+      try {
+         const response = await adminGetHandler(
+            "/admin/all-teachers",
+            loaderState
+         );
+         setStudents(response);
+         console.log(response);
+      } catch (error) {
+         console.log(error);
+      }
+   };
    const handleSubmit = async (e) => {
       e.preventDefault();
 
@@ -27,7 +45,11 @@ export default function CreateClass() {
       };
 
       try {
-         const response = await adminPostHandler("/admin/create-class", data, loaderState);
+         const response = await adminPostHandler(
+            "/admin/create-class",
+            data,
+            loaderState
+         );
          console.log(response);
          alert("class scheduled");
       } catch (error) {
@@ -74,8 +96,14 @@ export default function CreateClass() {
                            <option value="" selected>
                               Select Teacher
                            </option>
-                           <option value="656de976137b2ae1ed048679	">Akinwumi Grace</option>
-                           <option value="sheezey">Mary Global </option>
+                           <option value="656de976137b2ae1ed048679	">
+                              Akinwumi Grace
+                           </option>
+                           {students.map((i, index) => (
+                              <option value={i.user_id} index={index}>
+                                 {i.personal_info.firstname} {i.personal_info.lastname}{" "}
+                              </option>
+                           ))}
                         </select>
                      </div>
 

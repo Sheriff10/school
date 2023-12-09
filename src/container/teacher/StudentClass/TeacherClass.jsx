@@ -67,12 +67,6 @@ export default function TeacherClass() {
                      <option value="canceled">Canceled</option>
                   </select>
                </div>
-
-               <div className="btn-wrap">
-                  <span className="flex items-center gap-2 text-white bg-pri rounded-lg p-2">
-                     Create New Class <FaPlus />
-                  </span>
-               </div>
             </div>
             <div className="row">
                {cardClasses.map((classes, index) => (

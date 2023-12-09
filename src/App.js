@@ -37,6 +37,9 @@ import LoaderContextWrap from "./context/LoaderContext";
 import CreateTeacher from "./container/admin/Teachers/CreateTeacher";
 import ViewTeacher from "./container/admin/Teachers/ViewTeacher";
 import Teacher from "./container/admin/Teachers/Teacher";
+import CreateCalendar from "./container/admin/Calendar/Calendar";
+import Grade from "./container/admin/Grade/Grade";
+import Record from "./container/admin/Grade/recordGrade/Record";
 
 function App() {
    window.api = "http://localhost:5000";
@@ -78,6 +81,9 @@ function App() {
                   element={<ViewAnnouncement />}
                />
                <Route path="/admin/attendance" element={<MarkAttendance />} />
+               <Route path="/admin/create-calendar" element={<CreateCalendar />} />
+               <Route path="/admin/grade" element={<Grade />} />
+               <Route path="/admin/grade/record" element={<Record />} />
 
                {/* Teacher Route */}
                <Route

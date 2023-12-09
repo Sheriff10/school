@@ -3,11 +3,12 @@ import { FaEye } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { LoaderContext } from "../../../../context/LoaderContext";
 import adminGetHandler from "../../../../utils/adminGetHandler";
+import adminPostHandler from "../../../../utils/adminPostHandler";
 import colorConfig from "../../../../utils/colorConfig";
 import Menu from "../../components/Menu";
 
 export default function AdminViewClasses() {
-   const loaderState  = useContext(LoaderContext);
+   const loaderState = useContext(LoaderContext);
 
    const url = window.location.href;
    const getUrl = new URL(url);
@@ -34,8 +35,23 @@ export default function AdminViewClasses() {
 
    const getClass = async () => {
       try {
-         const response = await adminGetHandler(`/admin/get-classes?id=${id}`, loaderState);
+         const response = await adminGetHandler(
+            `/admin/get-classes?id=${id}`,
+            loaderState
+         );
          setClassDetail(response.classId);
+         console.log(response);
+      } catch (error) {
+         console.log(error);
+      }
+   };
+   const updateClass = async (status) => {
+      try {
+         const response = await adminPostHandler(
+            `/admin/update-class/${id}/${status}`, {},
+            loaderState
+         );
+         getClass()
          console.log(response);
       } catch (error) {
          console.log(error);
@@ -86,12 +102,12 @@ export default function AdminViewClasses() {
 
                   <div className="text-wrap mt-3 bg-grey p-3 flex gap-3">
                      <div className="col">
-                        <button className="btn bg-pri text-white rounded-pill w-full">
+                        <button className="btn bg-pri text-white rounded-pill w-full" onClick={() => updateClass('completed')}>
                            Completed
                         </button>
                      </div>
                      <div className="col">
-                        <button className="btn border-pri text-pri rounded-pill w-full">
+                        <button className="btn border-pri text-pri rounded-pill w-full" onClick={() => updateClass('ongoing')}>
                            Ongoing
                         </button>
                      </div>

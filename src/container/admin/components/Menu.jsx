@@ -13,9 +13,11 @@ export default function Menu({ children }) {
       menuFunc(<FaHome />, "Student", "/admin/student"),
       menuFunc(<FaHome />, "Teacher", "/admin/teacher"),
       menuFunc(<FaHome />, "Classes", "/admin/classes"),
-      menuFunc(<FaHome />, "Create Classes", "/admin/classes/create"),
+      // menuFunc(<FaHome />, "Create Classes", "/admin/classes/create"),
       menuFunc(<FaHome />, "Announcement", "/admin/announcement"),
       menuFunc(<FaHome />, "Attendance", "/admin/attendance"),
+      menuFunc(<FaHome />, "Calender", "/admin/create-calendar"),
+      menuFunc(<FaHome />, "Grade", "/admin/grade"),
    ];
    const [show, setShow] = useState(true);
    return (

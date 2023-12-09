@@ -7,11 +7,13 @@ import Breadcrumb from "../../components/Breadcrumb";
 import Menu from "../components/Menu";
 
 export default function Announcement() {
-   const loaderState  = useContext(LoaderContext);
+   const loaderState = useContext(LoaderContext);
 
    const navi = useNavigate();
    const [title, setTitle] = useState("");
    const [description, setdescription] = useState("");
+   const [recipient, setRecipient] = useState("");
+
    const [announcement, setAnnouncement] = useState([]);
    const [limit, setLimit] = useState(3);
 
@@ -22,9 +24,13 @@ export default function Announcement() {
    const handleSubmit = async (e) => {
       e.preventDefault();
 
-      const data = { type: "announcement", title, description };
+      const data = { type: "announcement", title, description, recipient };
       try {
-         const response = await adminPostHandler("/admin/create-content", data, loaderState);
+         const response = await adminPostHandler(
+            "/admin/create-content",
+            data,
+            loaderState
+         );
          getAnnouncement();
          alert("new announcemment posted");
          console.log(response);
@@ -36,7 +42,8 @@ export default function Announcement() {
    const getAnnouncement = async () => {
       try {
          const response = await adminGetHandler(
-            `/admin/get-announcement?limit=${limit}`, loaderState
+            `/admin/get-announcement?limit=${limit}`,
+            loaderState
          );
          setAnnouncement(response);
          console.log(response);
@@ -76,6 +83,25 @@ export default function Announcement() {
                               onChange={(e) => setTitle(e.target.value)}
                               required
                            />
+                        </div>
+                        <div className="form-group mb-3">
+                           <span className="font-bold text-sm text-slate-500">
+                              Recipient
+                              <small className="text-red-600">*</small>
+                           </span>
+                           <select
+                              type="text"
+                              className="form-select p-3"
+                              placeholder="Title"
+                              value={recipient}
+                              onChange={(e) => setRecipient(e.target.value)}
+                              required
+                           >
+                              <option value="">select recipient</option>
+                              <option value="teacher">Teacher</option>
+                              <option value="student">Student</option>
+                              <option value="parent">Parent</option>
+                           </select>
                         </div>
                         <div className="form-group mb-3">
                            <span className="font-bold text-sm text-slate-500">

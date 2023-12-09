@@ -39,7 +39,7 @@ export default function StudentClass() {
    const getCardClasses = async () => {
       try {
          const response = await adminGetHandler(
-            `/admin/get-classes?limit=&status=${cardStatus}`
+            `/admin/get-classes?limit=&status=${cardStatus}`, loaderState
          );
          setCardClasses(response.classes);
          console.log(response.classes);
@@ -68,7 +68,7 @@ export default function StudentClass() {
                </div>
 
                <div className="btn-wrap">
-                  <span className="flex items-center gap-2 text-white bg-pri rounded-lg p-2">
+                  <span className="flex items-center gap-2 text-white bg-pri rounded-lg p-2" onClick={() => navi("/admin/classes/create")}>
                      Create New Class <FaPlus />
                   </span>
                </div>
