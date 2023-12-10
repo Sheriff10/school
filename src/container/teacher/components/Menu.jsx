@@ -27,7 +27,7 @@ export default function TeacherMenu({ children }) {
                   !show && "d-none"
                }`}
             >
-               <div className="wrap bg-white   fixed top-0 bottom-0 w-[80%] lg:w-[250px]">
+               <div className="wrap bg-white   fixed z-10 top-0 bottom-0 w-[80%] lg:w-[250px]">
                   <div className="logo-con text-2xl font-bold text-center py-4">
                      <span>Harmony Success School</span>
                   </div>
