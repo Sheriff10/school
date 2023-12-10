@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaInfo } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
+import { LoaderContext } from "../../context/LoaderContext";
 import loginPostHandler from "../../utils/authPostHandler";
 
 export default function Login() {
+   const loaderState  = useContext(LoaderContext);
+
    const [username, setUsername] = useState("");
    const [password, setPassword] = useState("");
 
@@ -15,7 +18,7 @@ export default function Login() {
 
       try {
          const data = { username, password };
-         const response = await loginPostHandler("/admin/auth", data);
+         const response = await loginPostHandler("/admin/auth", data, loaderState);
          const { user } = response;
 
          switch (user) {
