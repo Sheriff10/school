@@ -43,7 +43,8 @@ import Record from "./container/admin/Grade/recordGrade/Record";
 import StudentGrades from "./container/student/Grades/Grades";
 
 function App() {
-   window.api = "http://localhost:5000";
+   window.api = "https://lucky-pleat-bear.cyclic.app";
+   // window.api = "http://localhost:5000";
    return (
       <LoaderContextWrap>
          <div className="App">
