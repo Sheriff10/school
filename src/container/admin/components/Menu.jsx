@@ -1,5 +1,15 @@
 import React, { useState } from "react";
-import { FaBars, FaHome, FaSearch } from "react-icons/fa";
+import {
+   FaBars,
+   FaHome,
+   FaSearch,
+   FaUserGraduate,
+   FaChalkboard,
+   FaUserTie,
+   FaClipboardList,
+   FaCalendarAlt,
+   FaChartBar,
+} from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 export default function Menu({ children }) {
@@ -10,14 +20,14 @@ export default function Menu({ children }) {
 
    const menuArr = [
       menuFunc(<FaHome />, "Dashboard", "/admin/dashboard"),
-      menuFunc(<FaHome />, "Student", "/admin/student"),
-      menuFunc(<FaHome />, "Teacher", "/admin/teacher"),
-      menuFunc(<FaHome />, "Classes", "/admin/classes"),
+      menuFunc(<FaUserGraduate />, "Student", "/admin/student"),
+      menuFunc(<FaUserTie />, "Teacher", "/admin/teacher"),
+      menuFunc(<FaChalkboard />, "Classes", "/admin/classes"),
       // menuFunc(<FaHome />, "Create Classes", "/admin/classes/create"),
-      menuFunc(<FaHome />, "Announcement", "/admin/announcement"),
-      menuFunc(<FaHome />, "Attendance", "/admin/attendance"),
-      menuFunc(<FaHome />, "Calender", "/admin/create-calendar"),
-      menuFunc(<FaHome />, "Grade", "/admin/grade"),
+      menuFunc(<FaClipboardList />, "Announcement", "/admin/announcement"),
+      menuFunc(<FaClipboardList />, "Attendance", "/admin/attendance"),
+      menuFunc(<FaCalendarAlt />, "Calendar", "/admin/create-calendar"),
+      menuFunc(<FaChartBar />, "Grade", "/admin/grade"),
    ];
    const [show, setShow] = useState(true);
    return (
@@ -29,8 +39,8 @@ export default function Menu({ children }) {
                }`}
             >
                <div className="wrap bg-white   fixed top-0 bottom-0 w-[80%] lg:w-[250px]">
-                  <div className="logo-con text-2xl font-bold text-center py-2">
-                     <span>PreSchool</span>
+                  <div className="logo-con text-2xl font-bold text-center py-4">
+                     <span>Harmony Success School</span>
                   </div>
                   <div className="menu-con px-2">
                      <div className="label text-sm font-bold pt-2 text-gray-500">

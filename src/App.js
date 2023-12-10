@@ -40,6 +40,7 @@ import Teacher from "./container/admin/Teachers/Teacher";
 import CreateCalendar from "./container/admin/Calendar/Calendar";
 import Grade from "./container/admin/Grade/Grade";
 import Record from "./container/admin/Grade/recordGrade/Record";
+import StudentGrades from "./container/student/Grades/Grades";
 
 function App() {
    window.api = "http://localhost:5000";
@@ -130,6 +131,10 @@ function App() {
                <Route
                   path="/student/assignments/view"
                   element={<StudentViewAssignment />}
+               />
+               <Route
+                  path="/student/grades"
+                  element={<StudentGrades />}
                />
             </Routes>
          </div>

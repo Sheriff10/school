@@ -38,6 +38,7 @@ export default function StudentDashboard() {
          setOngoingClasses(response.ongoing_classes);
          setAnnouncement(response.announcement);
          setUpcomingClasses(response.upcoming_class);
+         console.log(response)
       } catch (error) {
          console.log(error);
       }
@@ -65,7 +66,7 @@ export default function StudentDashboard() {
          />
 
          {/* Card And Stats */}
-         <div className="container py-4">
+         {/* <div className="container py-4">
             <div className="row py-4">
                {cardArr.map((card, index) => (
                   <div className="col-lg-4">
@@ -78,18 +79,18 @@ export default function StudentDashboard() {
                   </div>
                ))}
             </div>
-         </div>
+         </div> */}
 
          {/* Upcoming Lessons And Total classes Histories */}
          <div className="container dash-tb">
-            <div className="row">
+            <div className="row justify-center">
                <div className="col-lg-8 mb-3">
                   <div className="row">
                      <div className="col-lg-8 mb-3">
                         <div className=" bg-white p-4 rounded-xl ">
                            <div className="heading text-xl font-bold mb-4 flex justify-between items-center">
                               <span>Upcoming Classes</span>{" "}
-                              <span className="text-pri text-xs">view all</span>
+                              <span className="text-pri text-xs cursor-pointer" onClick={() => navi("/student/class")}>view all</span>
                            </div>
 
                            {upcomingClasses.map((i, index) => (
@@ -125,7 +126,7 @@ export default function StudentDashboard() {
                         </div>
                      </div>
 
-                     <div className="col-lg-4">
+                     {/* <div className="col-lg-4">
                         <div className="bg-white p-4 rounded-xl ">
                            <div className="heading text-xl font-medium mb-4">
                               <span>Total Class Today</span> <br />
@@ -140,11 +141,11 @@ export default function StudentDashboard() {
                               </span>
                            </div>
                         </div>
-                     </div>
+                     </div> */}
                   </div>
                </div>
                <div className="col-lg-4 mb-3">
-                  <Calendar className="rounded-lg border-0" />
+                  <Calendar className="rounded-lg border-0 mx-auto"/>
                </div>
             </div>
          </div>
@@ -159,7 +160,7 @@ export default function StudentDashboard() {
                      </div>
 
                      {ongoingClasses.map((i, index) => (
-                        <div className="card rounded-xl shadow">
+                        <div className="card rounded-xl shadow mb-3">
                            <div className="card-head text-center p-2 py-3 bg-pri text-white">
                               <span className="text-3xl font-bold">
                                  PHYSICS

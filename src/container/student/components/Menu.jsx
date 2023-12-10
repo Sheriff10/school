@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaBars, FaHome, FaSearch } from "react-icons/fa";
+import { FaBars, FaHome, FaSearch, FaCalendarAlt, FaChalkboard, FaEnvelope, FaClipboardList, FaChartBar } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 export default function StudentMenu({ children }) {
@@ -10,11 +10,12 @@ export default function StudentMenu({ children }) {
 
    const menuArr = [
       menuFunc(<FaHome />, "Dashboard", "/student/dashboard"),
-      menuFunc(<FaHome />, "Calendar", "/student/calendar"),
-      menuFunc(<FaHome />, "Classes", "/student/class"),
-      menuFunc(<FaHome />, "Message", "/student/message"),
-      menuFunc(<FaHome />, "Assignments", "/student/assignments"),
-   ];
+      menuFunc(<FaCalendarAlt />, "Calendar", "/student/calendar"),
+      menuFunc(<FaChalkboard />, "Classes", "/student/class"),
+      menuFunc(<FaEnvelope />, "Message", "/student/message"),
+      menuFunc(<FaClipboardList />, "Assignments", "/student/assignments"),
+      menuFunc(<FaChartBar />, "Grades", "/student/grades"),
+    ];
    const [show, setShow] = useState(true);
    return (
       <div className="menu bg-grey">
@@ -25,8 +26,8 @@ export default function StudentMenu({ children }) {
                }`}
             >
                <div className="wrap bg-white   fixed top-0 bottom-0 w-[80%] lg:w-[250px]">
-                  <div className="logo-con text-2xl font-bold text-center py-2">
-                     <span>PreSchool</span>
+                  <div className="logo-con text-2xl font-bold text-center py-4">
+                     <span>Harmony Success School</span>
                   </div>
                   <div className="menu-con px-2">
                      <div className="label text-sm font-bold pt-2 text-gray-500">

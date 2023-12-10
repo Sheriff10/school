@@ -21,7 +21,7 @@ export default function TeacherDashboard() {
       teachers: 0,
    });
 
-   const [ongoingClasses, setOngoingClasses] = useState([]);
+   const [ongoingClasses, setOngoingClasses] = useState([1,2]);
 
    useEffect(() => {
       getStats();
@@ -63,9 +63,9 @@ export default function TeacherDashboard() {
    const getClasses = async () => {
       try {
          const response = await teacherGetHandler(
-            "/teacher/ongoing-class?limit=5"
+            "/teacher/get-classes?status=ongoing&limit=5",loaderState
          );
-         setOngoingClasses(response);
+         setOngoingClasses(response.classes);
          console.log(response);
       } catch (error) {
          console.log(error);

@@ -6,6 +6,7 @@ import adminGetHandler from "../../../../utils/adminGetHandler";
 import adminPostHandler from "../../../../utils/adminPostHandler";
 import colorConfig from "../../../../utils/colorConfig";
 import teacherGetHandler from "../../../../utils/teacherGetHandler";
+import teacherPostHandler from "../../../../utils/teacherPostHandler";
 import Menu from "../../components/Menu";
 
 export default function TeacherViewClasses() {
@@ -45,7 +46,7 @@ export default function TeacherViewClasses() {
    };
    const updateClass = async (status) => {
       try {
-         const response = await adminPostHandler(
+         const response = await teacherPostHandler(
             `/teacher/update-class/${id}/${status}`, {},
             loaderState
          );

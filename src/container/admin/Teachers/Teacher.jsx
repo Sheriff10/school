@@ -89,9 +89,6 @@ export default function Teacher() {
                                  <span className="bg-red-600 text-white p-2 rounded-full">
                                     <FaTrash />
                                  </span>{" "}
-                                 <span className="bg-pri text-white p-2 rounded-full">
-                                    <FaPen />{" "}
-                                 </span>
                                  <span
                                     className="bg-pri text-white p-2 rounded-full"
                                     onClick={() =>

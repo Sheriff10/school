@@ -90,9 +90,6 @@ export default function Student() {
                               <td className="flex justify-around items-center p-2 text-xs">
                                  <span className="bg-red-600 text-white p-2 rounded-full">
                                     <FaTrash />
-                                 </span>{" "}
-                                 <span className="bg-pri text-white p-2 rounded-full">
-                                    <FaPen />{" "}
                                  </span>
                                  <span
                                     className="bg-pri text-white p-2 rounded-full"
