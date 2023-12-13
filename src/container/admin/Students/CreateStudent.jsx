@@ -13,6 +13,7 @@ export default function CreateStudent() {
       role: "",
       firstname: "",
       lastname: "",
+      parentEmail: "",
       address: "",
       grade: "",
       dob: "",
