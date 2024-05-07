@@ -34,8 +34,8 @@ export default function Dashboard() {
          stats.students,
          "https://preschool.dreamstechnologies.com/template/assets/img/icons/dash-icon-01.svg"
       ),
-      cardFunc("Teachers", stats.teachers, "imgLink"),
-      cardFunc("Classes", stats.classes, "imgLink"),
+      cardFunc("Teachers", stats.teachers, "https://preschool.dreamstechnologies.com/template/assets/img/icons/teacher-icon-02.svg"),
+      cardFunc("Classes", stats.classes, "https://preschool.dreamstechnologies.com/template/assets/img/icons/teacher-icon-01.svg"),
    ];
 
    const getStats = async () => {
